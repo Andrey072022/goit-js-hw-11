@@ -1,3 +1,4 @@
+@import '~node_modules/modern-normalize/modern-normalize.css';
 :root {
   --grey-cl: rgb(157, 164, 189);
   --grey-cl-60: rgba(105, 118, 164, 0.2);
@@ -5,7 +6,6 @@
   --color-second-font: rgb(95, 158, 160);
   --color-comment: rgb(220, 245, 237);
   --color-card-post: rgb(104, 123, 182, 0.3);
-
   /* Others */
   --btn-radius: 25px;
   --indent: 30px;
@@ -13,24 +13,19 @@
   --header-idx: 10;
   --modal-idx: 100;
   --menu-idx: 1000;
-
   --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   --animation-duration: 250ms;
-
   --anim-fast: 300ms ease-out;
   --anim-slow: 800ms ease;
 }
+
 body {
-  font-family: 'Montserrat', Verdana, sans-serif;
+  font-family: "Montserrat", Verdana, sans-serif;
   font-style: normal;
   font-weight: 400;
   letter-spacing: 0.04em;
   color: var(--color-font);
-  background-image: linear-gradient(
-    150deg,
-    rgba(250, 241, 68, 0.2),
-    rgb(63, 63, 129, 0.2)
-  );
+  background-image: linear-gradient(150deg, rgba(250, 241, 68, 0.2), rgba(63, 63, 129, 0.2));
 }
 
 img {
@@ -39,14 +34,14 @@ img {
   width: 100%;
   height: auto;
 }
+
 .stop-scrolling {
   height: 100%;
   overflow: hidden;
 }
-//
+
 .example {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
-    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   line-height: 1.5;
   background-color: #fff;
   color: #2f2f37;
@@ -66,28 +61,25 @@ img {
 
 .example .background {
   height: 240px;
-  // ❗️❗️❗️ The path to images from a SASS file
-  // is always the same as from the css folder.
-  background-image: url('../images/logo.png');
+  background-image: url("../images/logo.png");
   background-size: cover;
   background-position: center;
 }
-// My
+
 .header {
   position: fixed;
   top: 0;
   left: 0;
   z-index: var(--header-idx);
-
   width: 100%;
-
-  transition: background-color var(--anim-slow),
-    backdrop-filter var(--anim-slow);
+  transition: background-color var(--anim-slow), -webkit-backdrop-filter var(--anim-slow);
+  transition: background-color var(--anim-slow), backdrop-filter var(--anim-slow);
+  transition: background-color var(--anim-slow), backdrop-filter var(--anim-slow), -webkit-backdrop-filter var(--anim-slow);
   background-color: var(--grey-cl-60);
-
   padding-top: 10px;
   padding-bottom: 10px;
 }
+
 .search-form {
   display: flex;
   align-items: center;
@@ -99,20 +91,15 @@ input {
   margin-top: 20px;
   padding-top: 10px;
   padding-bottom: 10px;
-
   padding-left: 20px;
-
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
   border-radius: 20px;
   border-color: transparent;
-
   background-color: var(--color-comment);
-
   font-weight: 400;
   font-size: 16px;
   line-height: 1.25;
   letter-spacing: 0.03em;
-
   color: var(--color-font);
   resize: none;
 }
@@ -126,27 +113,24 @@ input:focus {
   height: 40px;
   padding: 0px;
   margin-top: 20px;
-
   font-family: inherit;
   font-weight: 600;
   font-size: 12px;
-  line-height: calc(16 / 12);
+  line-height: 1.3333333333;
   letter-spacing: 0.09em;
   text-transform: uppercase;
   color: var(--color-second-font);
-
   background-color: transparent;
   border: 1px solid var(--color-font);
   border-radius: 25px;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
   cursor: pointer;
-
   transition-property: color, background-color;
   transition-duration: 300ms;
   transition-timing-function: ease-out;
-
   transition: color var(--anim-fast), background-color var(--anim-fast);
 }
+
 .btn-search {
   background-color: rgba(0, 255, 208, 0.3);
 }
@@ -167,7 +151,6 @@ input:focus {
   justify-content: center;
   margin-left: auto;
   margin-right: auto;
-
   font-size: 10px;
 }
 
@@ -175,8 +158,7 @@ input:focus {
   position: relative;
   overflow: hidden;
   border-radius: 25px;
-  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
-    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
 }
 
 .thumb:hover {
@@ -184,16 +166,16 @@ input:focus {
 }
 
 .thumb img {
-  // height: 100%;
   height: 260px;
   width: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   transition: transform var(--animation-duration) var(--timing-function);
 }
+
 .photo-card {
   height: 300px;
   border-color: transparent;
-  // background-size: contain;
 }
 
 .gallery__link {
@@ -211,37 +193,42 @@ input:focus {
   justify-content: center;
   gap: 20px;
 }
+
 .thumb_btn {
   display: flex;
   justify-content: center;
   padding-top: 40px;
   padding-bottom: 40px;
 }
+
 .ishidden {
   display: none;
 }
 
 .comment::before {
-  content: url('../images/bubbles4.svg');
+  content: url("../images/bubbles4.svg");
   width: 20px;
   height: 20px;
   margin-right: 10px;
 }
+
 .look::before {
-  content: url('../images/spinner10.svg');
+  content: url("../images/spinner10.svg");
   width: 20px;
   height: 20px;
   margin-right: 10px;
 }
+
 .likes::before {
-  content: url('../images/heart.svg');
+  content: url("../images/heart.svg");
   width: 20px;
   height: 20px;
   margin-right: 10px;
 }
+
 .download::before {
-  content: url('../images/download.svg');
+  content: url("../images/download.svg");
   width: 20px;
   height: 20px;
   margin-right: 10px;
-}
+}/*# sourceMappingURL=index.css.map */
